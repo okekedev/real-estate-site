@@ -1,0 +1,40 @@
+{
+  "routes": [
+    {
+      "route": "/about",
+      "redirect": "/about/",
+      "statusCode": 301
+    },
+    {
+      "route": "/portfolio",
+      "redirect": "/portfolio/",
+      "statusCode": 301
+    },
+    {
+      "route": "/contact",
+      "redirect": "/contact/",
+      "statusCode": 301
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/images/*.{jpg,jpeg,png,gif,webp,svg}", "/styles.css", "/*.css", "/*.js"]
+  },
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/index.html",
+      "statusCode": 200
+    }
+  },
+  "globalHeaders": {
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "X-XSS-Protection": "1; mode=block",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
+  },
+  "mimeTypes": {
+    ".json": "text/json"
+  }
+}

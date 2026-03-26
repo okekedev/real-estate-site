@@ -1,0 +1,217 @@
+/* ── Portfolio Page Styles ──────────────────────────────────── */
+
+/* Filter Bar */
+.portfolio-filters {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-lg) 0;
+  border-bottom: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-right: var(--spacing-xs);
+}
+
+.filter-btn {
+  padding: 0.45rem 1.1rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  border-color: var(--color-text);
+  color: var(--color-text);
+  background: var(--color-text);
+  color: var(--color-white);
+}
+
+/* Main Gallery Grid */
+.portfolio-gallery {
+  padding: var(--spacing-xl) 0 var(--spacing-2xl);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--color-bg-alt);
+}
+
+/* Grid item variants for visual rhythm */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-bg);
+  cursor: pointer;
+}
+
+.gallery-item--tall {
+  grid-row: span 2;
+}
+
+.gallery-item--wide {
+  grid-column: span 2;
+}
+
+.gallery-item .photo-placeholder,
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item--tall .photo-placeholder,
+.gallery-item--tall img {
+  aspect-ratio: unset;
+  min-height: 360px;
+}
+
+.gallery-item--wide .photo-placeholder,
+.gallery-item--wide img {
+  aspect-ratio: 16/9;
+  height: auto;
+}
+
+.gallery-item:hover .photo-placeholder,
+.gallery-item:hover img {
+  transform: scale(1.03);
+}
+
+/* Caption overlay */
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--spacing-md) var(--spacing-sm);
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+  color: var(--color-white);
+  transform: translateY(100%);
+  transition: transform 0.35s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+  transform: translateY(0);
+}
+
+.gallery-caption-title {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+}
+
+.gallery-caption-sub {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+}
+
+/* Placeholder shared style */
+.photo-placeholder {
+  background: #e8e8e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-placeholder span {
+  font-size: 0.72rem;
+  font-family: var(--font-sans);
+  color: #aaa;
+  letter-spacing: 0.06em;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+/* Add Photos Note */
+.add-photos-note {
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  border: 1px dashed var(--color-border);
+  margin-top: var(--spacing-lg);
+  background: var(--color-bg-alt);
+}
+
+.add-photos-note .eyebrow {
+  margin-bottom: var(--spacing-sm);
+}
+
+.add-photos-note p {
+  color: var(--color-text-muted);
+  max-width: 480px;
+  margin: 0 auto var(--spacing-md);
+}
+
+.add-photos-note code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  background: var(--color-border);
+  padding: 0.2rem 0.5rem;
+}
+
+/* Contact strip */
+.portfolio-cta {
+  background: var(--color-bg-dark);
+  padding: var(--spacing-xl) 0;
+  text-align: center;
+}
+
+.portfolio-cta h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: var(--color-white);
+  margin-bottom: var(--spacing-sm);
+}
+
+.portfolio-cta p {
+  color: rgba(255,255,255,0.55);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item--tall,
+  .gallery-item--wide {
+    grid-row: span 1;
+    grid-column: span 1;
+  }
+
+  .gallery-item .photo-placeholder,
+  .gallery-item img {
+    aspect-ratio: 4/3;
+  }
+
+  .gallery-item--tall .photo-placeholder {
+    min-height: unset;
+  }
+}

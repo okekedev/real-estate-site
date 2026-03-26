@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Kayle Baker — Real Estate Agent | Wichita Falls, TX</title>
+  <meta name="description" content="Get in touch with Kayle Baker at Paramount Real Estate Services. Buying, selling, or just curious — reach out today.">
+  <link rel="canonical" href="https://kaylebaker.com/contact/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kaylebaker.com/contact/">
+  <meta property="og:title" content="Contact Kayle Baker — Wichita Falls Real Estate">
+  <meta property="og:description" content="Get in touch — buying, selling, or just exploring.">
+  <meta property="og:image" content="https://kaylebaker.com/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+  <!-- ── Navigation ─────────────────────────────────────── -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Kayle <span>Baker</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="/about/">About</a>
+        <a href="/portfolio/">Portfolio</a>
+        <a href="/contact/" class="active" aria-current="page">Contact</a>
+        <a href="/contact/" class="nav-cta active">Get in Touch</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── Page Hero ──────────────────────────────────────── -->
+    <header class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Paramount Real Estate · Wichita Falls, TX</p>
+        <h1>Let's Connect</h1>
+      </div>
+    </header>
+
+    <!-- ── Contact Section ────────────────────────────────── -->
+    <section class="contact-section" aria-label="Contact form and information">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- ── Form ─────────────────────────────────────── -->
+          <div class="contact-form-wrap">
+            <p class="eyebrow">Send a Message</p>
+            <h2>I'd love to hear from you.</h2>
+            <p class="form-intro">
+              Fill out the form and I'll get back to you within one business day.
+              No pressure — just a conversation.
+            </p>
+
+            <!--
+              FORMSPREE SETUP:
+              1. Create a free account at https://formspree.io
+              2. Create a new form and copy your Form ID
+              3. Replace YOUR_FORM_ID below with your actual ID
+                 Example: https://formspree.io/f/xpzvgkdo
+            -->
+            <form
+              class="contact-form"
+              id="contactForm"
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST"
+              novalidate
+            >
+
+              <!-- Honeypot — bots fill this, humans don't see it -->
+              <div class="form-honeypot" aria-hidden="true">
+                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+              </div>
+
+              <!-- Redirect after submission (optional) -->
+              <input type="hidden" name="_next" value="https://kaylebaker.com/contact/?sent=true">
+
+              <!-- Name + Email -->
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="name">
+                    Full Name <span class="required-mark" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    autocomplete="name"
+                    placeholder="Jane Smith"
+                    required
+                    data-crm="contact_name"
+                  >
+                </div>
+                <div class="form-field">
+                  <label for="email">
+                    Email <span class="required-mark" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email"
+                    placeholder="jane@email.com"
+                    required
+                    data-crm="contact_email"
+                  >
+                </div>
+              </div>
+
+              <!-- Phone + Inquiry Type -->
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="phone">
+                    Phone <span class="required-mark" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    autocomplete="tel"
+                    placeholder="(940) 000-0000"
+                    required
+                    data-crm="contact_phone"
+                  >
+                </div>
+                <div class="form-field">
+                  <label for="inquiry">
+                    I'm interested in <span class="required-mark" aria-hidden="true">*</span>
+                  </label>
+                  <select
+                    id="inquiry"
+                    name="inquiry_type"
+                    required
+                    data-crm="inquiry_type"
+                  >
+                    <option value="" disabled selected>Select one…</option>
+                    <option value="buying">Buying a Home</option>
+                    <option value="selling">Selling a Home</option>
+                    <option value="both">Buying &amp; Selling</option>
+                    <option value="general">General Question</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Message -->
+              <div class="form-field">
+                <label for="message">
+                  Message <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Tell me a bit about what you're looking for…"
+                  required
+                  data-crm="inquiry_message"
+                ></textarea>
+              </div>
+
+              <!-- Submit -->
+              <div class="form-submit">
+                <button type="submit" class="btn btn--filled">Send Message</button>
+                <p class="form-note">
+                  Your information is never shared. I'll respond within one business day.
+                </p>
+              </div>
+
+            </form>
+
+            <!-- Success state (shown via JS after redirect param) -->
+            <div class="form-success" id="formSuccess" role="alert" aria-live="polite">
+              <h3>Message Sent!</h3>
+              <p>Thanks for reaching out. I'll be in touch within one business day.</p>
+            </div>
+          </div>
+
+          <!-- ── Info Side ─────────────────────────────────── -->
+          <aside class="contact-info" aria-label="Contact information">
+            <p class="eyebrow">Direct Contact</p>
+            <h2>Reach me directly.</h2>
+
+            <div class="info-block">
+              <span class="info-label">Phone</span>
+              <div class="info-value">
+                <!-- Replace with Kayle's real number -->
+                <a href="tel:+19400000000">(940) 000-0000</a>
+              </div>
+              <p>Call or text anytime — I'm always available for my clients.</p>
+            </div>
+
+            <div class="info-block">
+              <span class="info-label">Email</span>
+              <div class="info-value">
+                <!-- Replace with Kayle's real email -->
+                <a href="mailto:kayle@paramountrealtx.com">kayle@paramountrealtx.com</a>
+              </div>
+            </div>
+
+            <div class="info-block">
+              <span class="info-label">Office</span>
+              <div class="info-value">
+                Paramount Real Estate Services<br>
+                <!-- Replace with office address -->
+                Wichita Falls, TX
+              </div>
+              <p>Licensed in the State of Texas.</p>
+            </div>
+
+            <div class="info-block">
+              <span class="info-label">Availability</span>
+              <div class="info-value">Monday – Saturday</div>
+              <p>Available evenings and weekends by appointment.</p>
+              <div class="response-badge">Typically responds within a few hours</div>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo">Kayle Baker</div>
+          <p>Paramount Real Estate Services<br>Wichita Falls, TX</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="/">Home</a>
+          <a href="/about/">About</a>
+          <a href="/portfolio/">Portfolio</a>
+          <a href="/contact/">Contact</a>
+        </nav>
+        <div class="footer-contact">
+          <a href="tel:+19400000000">(940) 000-0000</a><br>
+          <a href="mailto:kayle@paramountrealtx.com">kayle@paramountrealtx.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Kayle Baker · Paramount Real Estate Services · All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const nav = document.getElementById('nav');
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('active');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    // Show success message if redirected back with ?sent=true
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('sent') === 'true') {
+      const form = document.getElementById('contactForm');
+      const success = document.getElementById('formSuccess');
+      if (form && success) {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>
