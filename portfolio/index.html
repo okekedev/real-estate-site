@@ -20,20 +20,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="portfolio.css">
+  <link rel="stylesheet" href="/styles.css?v=4">
+  <link rel="stylesheet" href="portfolio.css?v=4">
 </head>
 <body>
 
   <!-- ── Navigation ─────────────────────────────────────── -->
   <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="/" class="nav-logo">Kayle <span>Baker</span></a>
+      <a href="/" class="nav-logo">The <span>Bakers</span></a>
       <div class="nav-links" id="navLinks">
-        <a href="/about/">About</a>
-        <a href="/portfolio/" class="active" aria-current="page">Portfolio</a>
+        <a href="/">Home</a>
+        <a href="/about/#kayla">Kayla · The Agent</a>
+        <a href="/jared/">Jared · The Golfer</a>
+        <a href="/portfolio/" class="active">Active Listings</a>
         <a href="/contact/">Contact</a>
-        <a href="/contact/" class="nav-cta">Get in Touch</a>
       </div>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
         <span></span>
@@ -45,142 +46,34 @@
 
   <main>
 
-    <!-- ── Page Hero ──────────────────────────────────────── -->
-    <header class="page-hero">
-      <div class="container">
-        <p class="eyebrow">Properties &amp; Lifestyle</p>
-        <h1>Portfolio</h1>
-      </div>
-    </header>
-
-    <!-- ── Gallery ────────────────────────────────────────── -->
-    <section class="portfolio-gallery" aria-label="Photo gallery">
-      <div class="container">
-
-
-        <div class="gallery-grid" role="list" aria-label="Property and lifestyle photos">
-
-          <!-- Row 1 -->
-          <div class="gallery-item gallery-item--tall" role="listitem">
-            <img src="../images/portfolio-1.jpg" alt="Featured listing in Wichita Falls" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
-            <div class="gallery-caption">
-              <div class="gallery-caption-title">Featured Listing</div>
-              <div class="gallery-caption-sub">Wichita Falls, TX</div>
-            </div>
+    <!-- ── Listings ───────────────────────────────────────── -->
+    <section class="listings-section" aria-label="Active listings">
+      <div class="listings-backdrop"></div>
+      <div class="container listings-content">
+          <p class="eyebrow eyebrow--light">Active Listings</p>
+          <h2>Browse current properties.</h2>
+          <p>View Kayle's active listings directly on the MLS.</p>
+          <div class="listings-btns">
+            <a href="https://www.realtorwf.com/kayle-parks/" target="_blank" rel="noopener noreferrer" class="btn btn--light">Paramount Real Estate</a>
+            <a href="https://www.har.com/kayle-byrne-parks/agent_wfartx-2036" target="_blank" rel="noopener noreferrer" class="btn btn--outline-light">HAR Listings</a>
           </div>
-
-          <div class="gallery-item" role="listitem">
-            <img src="../images/portfolio-2.jpg" alt="Family home property" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
-            <div class="gallery-caption">
-              <div class="gallery-caption-title">Family Home</div>
-              <div class="gallery-caption-sub">Recently Sold</div>
-            </div>
-          </div>
-
-          <div class="gallery-item" role="listitem">
-            <img src="../images/portfolio-3.jpg" alt="New listing property" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
-            <div class="gallery-caption">
-              <div class="gallery-caption-title">New Listing</div>
-              <div class="gallery-caption-sub">Available Now</div>
-            </div>
-          </div>
-
-          <!-- Row 2 -->
-          <div class="gallery-item gallery-item--wide" role="listitem">
-            <img src="../images/portfolio-4.jpg" alt="Wichita Falls community lifestyle" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
-            <div class="gallery-caption">
-              <div class="gallery-caption-title">Wichita Falls Community</div>
-              <div class="gallery-caption-sub">Lifestyle</div>
-            </div>
-          </div>
-
-          <div class="gallery-item" role="listitem">
-            <div class="photo-placeholder" aria-label="Property photo"><span>portfolio-5.jpg<br>800×800px</span></div>
-            <div class="gallery-caption">
-              <div class="gallery-caption-title">Modern Interior</div>
-              <div class="gallery-caption-sub">Sold</div>
-            </div>
-          </div>
-
-          <!-- Row 3 -->
-          <div class="gallery-item" role="listitem">
-            <div class="photo-placeholder" aria-label="Property photo"><span>portfolio-6.jpg<br>800×800px</span></div>
-            <div class="gallery-caption">
-              <div class="gallery-caption-title">Charming Bungalow</div>
-              <div class="gallery-caption-sub">Sold</div>
-            </div>
-          </div>
-
-          <div class="gallery-item gallery-item--tall" role="listitem">
-            <div class="photo-placeholder" aria-label="Portrait or lifestyle photo — tall"><span>portfolio-portrait.jpg<br>600×800px</span></div>
-            <div class="gallery-caption">
-              <div class="gallery-caption-title">Happy Clients</div>
-              <div class="gallery-caption-sub">Family · Wichita Falls</div>
-            </div>
-          </div>
-
-          <div class="gallery-item" role="listitem">
-            <div class="photo-placeholder" aria-label="Property photo"><span>portfolio-8.jpg<br>800×800px</span></div>
-            <div class="gallery-caption">
-              <div class="gallery-caption-title">Curb Appeal</div>
-              <div class="gallery-caption-sub">Recently Listed</div>
-            </div>
-          </div>
-
-          <div class="gallery-item" role="listitem">
-            <div class="photo-placeholder" aria-label="Property photo"><span>portfolio-9.jpg<br>800×800px</span></div>
-            <div class="gallery-caption">
-              <div class="gallery-caption-title">Backyard Living</div>
-              <div class="gallery-caption-sub">Sold</div>
-            </div>
-          </div>
-
-        </div>
-
-
       </div>
     </section>
 
-    <!-- ── CTA ────────────────────────────────────────────── -->
-    <div class="portfolio-cta" aria-label="Contact call to action">
-      <div class="container">
-        <p class="eyebrow eyebrow--light" style="margin-bottom: var(--spacing-sm);">Interested in working together?</p>
-        <h2>Let's find your next home.</h2>
-        <p>Reach out — I'd love to hear about what you're looking for.</p>
-        <a href="/contact/" class="btn btn--light">Get in Touch</a>
-      </div>
-    </div>
+
 
   </main>
 
   <!-- ── Footer ─────────────────────────────────────────────── -->
   <footer class="footer" role="contentinfo">
     <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <div class="footer-logo">Kayle Baker</div>
-          <p>Paramount Real Estate Services<br>Wichita Falls, TX</p>
-        </div>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="/">Home</a>
-          <a href="/about/">About</a>
-          <a href="/portfolio/">Portfolio</a>
-          <a href="/contact/">Contact</a>
-        </nav>
-        <div class="footer-contact">
-          <a href="tel:+19400000000">(940) 000-0000</a><br>
-          <a href="mailto:kayle@paramountrealtx.com">kayle@paramountrealtx.com</a>
-        </div>
-      </div>
       <div class="footer-bottom">
-        <p>&copy; <span id="year"></span> Kayle Baker · Paramount Real Estate Services · All rights reserved.</p>
+        <p>&copy; 2026 Okeke LLC · All Rights Reserved.</p>
       </div>
     </div>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
     const nav = document.getElementById('nav');
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
@@ -200,6 +93,7 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 10);
     }, { passive: true });
+
   </script>
 
 </body>

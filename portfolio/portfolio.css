@@ -1,5 +1,82 @@
 /* ── Portfolio Page Styles ──────────────────────────────────── */
 
+/* Live Listings iframe */
+.listings-section {
+  background: var(--color-bg-alt);
+  padding-top: calc(var(--nav-height) + var(--spacing-xl));
+  padding-bottom: var(--spacing-xl);
+}
+
+.listings-section {
+  position: relative;
+  background-image: url('/images/homes.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: calc(var(--nav-height) + var(--spacing-xl));
+  padding-bottom: var(--spacing-xl);
+}
+
+.listings-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.62);
+}
+
+.listings-overlay {
+  display: none;
+}
+
+.listings-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.listings-content .eyebrow--light {
+  color: rgba(255,255,255,0.6);
+  margin-bottom: var(--spacing-sm);
+}
+
+.listings-content h2 {
+  color: var(--color-white);
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  margin-bottom: var(--spacing-sm);
+}
+
+.listings-content p {
+  color: rgba(255,255,255,0.6);
+  margin-bottom: var(--spacing-lg);
+}
+
+.listings-btns {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn--outline-light {
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 6px;
+  color: var(--color-white);
+  padding: 0.85rem 2rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: transparent;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.btn--outline-light:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.8);
+}
+
 /* Filter Bar */
 .portfolio-filters {
   display: flex;

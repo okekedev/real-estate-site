@@ -20,8 +20,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+  <!-- Facebook SDK for reel embed -->
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
+
   <!-- Styles -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=4">
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
@@ -44,21 +47,24 @@
       "name": "Paramount Real Estate Services"
     }
   }
-  </script>
+
+</script>
 </head>
 <body>
+  <div id="fb-root"></div>
 
   <!-- ── Navigation ─────────────────────────────────────── -->
   <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="/" class="nav-logo" aria-label="Kayle Baker — Home">
-        Kayle <span>Baker</span>
+      <a href="/" class="nav-logo" aria-label="The Bakers — Home">
+        The <span>Bakers</span>
       </a>
       <div class="nav-links" id="navLinks">
-        <a href="/about/" aria-label="About Kayle">About</a>
-        <a href="/portfolio/" aria-label="Property portfolio">Portfolio</a>
-        <a href="/contact/" aria-label="Contact Kayle">Contact</a>
-        <a href="/contact/" class="nav-cta" aria-label="Get in touch with Kayle">Get in Touch</a>
+        <a href="/" class="active">Home</a>
+        <a href="/about/#kayla">Kayla · The Agent</a>
+        <a href="/jared/">Jared · The Golfer</a>
+        <a href="/portfolio/">Active Listings</a>
+        <a href="/contact/">Contact</a>
       </div>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
         <span></span>
@@ -70,254 +76,146 @@
 
   <main>
 
-    <!-- ── Hero ───────────────────────────────────────────── -->
-    <section class="hero" aria-label="Hero">
-      <div class="hero-bg" role="img" aria-label="Kayle Baker family photo"></div>
-
-      <div class="hero-content">
-        <p class="eyebrow eyebrow--light">Paramount Real Estate · Wichita Falls, TX</p>
-        <h1>Real Estate<br><em>with Heart.</em></h1>
-        <p class="hero-sub">Helping families find home in Wichita Falls and beyond.</p>
-        <div class="hero-actions">
-          <a href="/portfolio/" class="btn btn--light">View Portfolio</a>
-          <a href="/contact/" class="btn btn--light">Get in Touch</a>
-        </div>
-      </div>
-
-      <div class="hero-scroll-hint" aria-hidden="true">
-        <span class="eyebrow eyebrow--light">Scroll</span>
-        <div class="scroll-line"></div>
-      </div>
-    </section>
-
-    <!-- ── About Preview ──────────────────────────────────── -->
-    <section class="section about-preview" aria-label="About preview">
+    <!-- ── About (Main) ───────────────────────────────────── -->
+    <section class="section about-preview" aria-label="About The Bakers" style="padding-top: calc(var(--nav-height) + var(--spacing-lg));">
       <div class="container">
-        <div class="about-preview-grid">
-          <div class="about-preview-photo">
-            <img src="images/kayle-portrait.jpg" alt="Kayle Baker, real estate agent in Wichita Falls TX" style="width:100%; height:100%; object-fit:cover; aspect-ratio:3/4; display:block;">
+        <div class="about-preview-card">
+          <p class="eyebrow">Community Driven Real Estate</p>
+          <h2>Wichita Falls is our home. We'll help you make it yours.</h2>
+          <div class="about-preview-img-wrap">
+            <img src="images/newmain.jpg" alt="Placeholder image" class="about-preview-img">
+            <div class="about-preview-img-overlay"></div>
+            <span class="about-preview-img-label">Placeholder Image</span>
           </div>
-          <div class="about-preview-text">
-            <p class="eyebrow">About Kayle</p>
-            <h2>More than a transaction — a relationship.</h2>
-            <p class="about-preview-body">
-              Real estate isn't just about properties — it's about people and the lives they build.
-              As a Wichita Falls native and family-focused agent with Paramount Real Estate Services,
-              I bring local expertise, genuine care, and relentless dedication to every client I serve.
-            </p>
-            <p class="about-preview-body">
-              Whether you're buying your first home, selling a beloved property, or looking to invest,
-              I'm here to guide you every step of the way.
-            </p>
-            <a href="/about/" class="btn btn--dark" style="margin-top: var(--spacing-md);">Meet Kayle</a>
+          <p class="about-preview-body">
+            We bring local knowledge, genuine care, and relentless dedication to every transaction.
+          </p>
+          <div style="display: flex; gap: var(--spacing-sm); flex-wrap: wrap; margin-top: var(--spacing-md);">
+            <a href="/about/#kayla" class="btn btn--dark">Meet Kayla</a>
+            <a href="/jared/" class="btn btn--dark">Meet Jared</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── Portfolio Preview ──────────────────────────────── -->
+
+    <!-- ── Portfolio Categories ──────────────────────────── -->
     <section class="section section--alt portfolio-preview" aria-label="Portfolio preview">
       <div class="container">
-        <div class="section-header">
-          <p class="eyebrow">Portfolio</p>
-          <h2>Homes, Families &amp; Community</h2>
-          <p class="section-sub">A glimpse into the properties and lives I've had the honor of working with.</p>
+        <!-- Families -->
+        <div class="category-card">
+          <p class="eyebrow">Our Clients</p>
+          <h3>Real people. Real moments.</h3>
+          <div class="carousel" id="familiesCarousel">
+            <div class="carousel-track">
+              <img src="images/599206433_874417428690401_4234761641552799939_n.jpg" alt="Happy clients" class="carousel-slide" loading="lazy">
+              <img src="images/612227714_891618280303649_7066779896145691334_n.jpg" alt="Family moment" class="carousel-slide" loading="lazy">
+              <img src="images/613101525_891618323636978_5310080274135437871_n.jpg" alt="Family moment" class="carousel-slide" loading="lazy">
+              <img src="images/615360088_896795679785909_8640389220608103899_n.jpg" alt="Family moment" class="carousel-slide" loading="lazy">
+              <img src="images/617409421_902365465895597_91393814433696123_n.jpg" alt="Family moment" class="carousel-slide" loading="lazy">
+              <img src="images/621639451_902367439228733_4707059075823487116_n.jpg" alt="Family moment" class="carousel-slide" loading="lazy">
+            </div>
+            <button class="carousel-btn carousel-prev" aria-label="Previous photo">&#8249;</button>
+            <button class="carousel-btn carousel-next" aria-label="Next photo">&#8250;</button>
+            <div class="carousel-dots" aria-hidden="true">
+              <button class="carousel-dot active"></button>
+              <button class="carousel-dot"></button>
+              <button class="carousel-dot"></button>
+              <button class="carousel-dot"></button>
+              <button class="carousel-dot"></button>
+              <button class="carousel-dot"></button>
+            </div>
+          </div>
+          <p>The best part of this job isn't the closing — it's the look on a family's face when they finally find their home. Building relationships that last long after the keys are handed over.</p>
         </div>
-        <div class="portfolio-grid-preview">
-          <div class="portfolio-thumb portfolio-thumb--tall">
-            <img src="images/portfolio-1.jpg" alt="Featured listing property" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
-            <div class="thumb-caption">Featured Listing</div>
-          </div>
-          <div class="portfolio-thumb">
-            <img src="images/portfolio-2.jpg" alt="Family home property" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
-            <div class="thumb-caption">Family Home</div>
-          </div>
-          <div class="portfolio-thumb">
-            <img src="images/portfolio-3.jpg" alt="Community property" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
-            <div class="thumb-caption">Community</div>
-          </div>
-          <div class="portfolio-thumb portfolio-thumb--wide">
-            <img src="images/portfolio-4.jpg" alt="Lifestyle property" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
-            <div class="thumb-caption">Lifestyle</div>
-          </div>
+
+        <!-- Community -->
+        <div class="category-card">
+          <p class="eyebrow">Our Community — Wichita Falls</p>
+          <h3>Sell your listing before tee time.</h3>
+          <img src="images/golf.jpg" alt="Wichita Falls Country Club golf course" class="category-card-img" loading="lazy">
+          <p>This is a city worth knowing — and a market worth moving fast in. Let's get your home sold and get you back on the green.</p>
+          <a href="tel:+19400000000" class="btn btn--dark" style="margin-top: var(--spacing-md);">Call Us Today</a>
         </div>
-        <div class="section-footer">
-          <a href="/portfolio/" class="btn btn--dark">View Full Portfolio</a>
+
+        <!-- Homes -->
+        <div class="category-card">
+          <p class="eyebrow">Your Homes</p>
+          <h3>Every home tells a story.</h3>
+          <img src="images/homes.jpg" alt="Home listing in Wichita Falls TX" class="category-card-img" loading="lazy">
+          <p>From starter homes to forever homes, We work hard to find the right fit for every buyer and get the best result for every seller.</p>
+          <a href="/portfolio/" class="btn btn--dark" style="margin-top: var(--spacing-md);">View Portfolio</a>
         </div>
       </div>
     </section>
 
-    <!-- ── Contact CTA ─────────────────────────────────────── -->
-    <section class="section section--dark contact-cta" aria-label="Contact call to action">
-      <div class="container">
-        <div class="contact-cta-inner">
-          <div class="contact-cta-text">
-            <p class="eyebrow eyebrow--light">Let's Talk</p>
-            <h2>Ready to find your home?</h2>
-            <p>Reach out directly — no pressure, just a conversation.</p>
-          </div>
-          <div class="contact-cta-info">
-            <div class="contact-line">
-              <span class="eyebrow eyebrow--light">Phone</span>
-              <!-- Replace with Kayle's real number -->
-              <a href="tel:+19400000000">(940) 000-0000</a>
-            </div>
-            <div class="contact-line">
-              <span class="eyebrow eyebrow--light">Email</span>
-              <!-- Replace with Kayle's real email -->
-              <a href="mailto:kayle@paramountrealtx.com">kayle@paramountrealtx.com</a>
-            </div>
-            <div class="contact-line">
-              <span class="eyebrow eyebrow--light">Office</span>
-              <span>Paramount Real Estate Services<br>Wichita Falls, TX</span>
-            </div>
-            <a href="/contact/" class="btn btn--light" style="margin-top: var(--spacing-md);">Send a Message</a>
-          </div>
-        </div>
-      </div>
-    </section>
 
   </main>
 
   <!-- ── Footer ─────────────────────────────────────────────── -->
   <footer class="footer" role="contentinfo">
     <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <div class="footer-logo">Kayle Baker</div>
-          <p>Paramount Real Estate Services<br>Wichita Falls, TX</p>
-        </div>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="/">Home</a>
-          <a href="/about/">About</a>
-          <a href="/portfolio/">Portfolio</a>
-          <a href="/contact/">Contact</a>
-        </nav>
-        <div class="footer-contact">
-          <!-- Replace with real contact info -->
-          <a href="tel:+19400000000">(940) 000-0000</a><br>
-          <a href="mailto:kayle@paramountrealtx.com">kayle@paramountrealtx.com</a>
-        </div>
-      </div>
       <div class="footer-bottom">
-        <p>&copy; <span id="year"></span> Kayle Baker · Paramount Real Estate Services · All rights reserved.</p>
+        <p>&copy; 2026 Okeke LLC · All Rights Reserved.</p>
       </div>
     </div>
   </footer>
 
   <!-- Inline styles for homepage-specific layout -->
   <style>
-    /* ── Hero ──────────────────────────────────────────────── */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background: var(--color-bg-dark);
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background: #1a1a1a;
-      background-image: url('images/hero-main.jpg');
-      background-size: cover;
-      background-position: center top;
-      opacity: 0.65;
-    }
-
-    .hero-bg::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.35) 0%,
-        rgba(0,0,0,0.5) 60%,
-        rgba(0,0,0,0.7) 100%
-      );
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      color: var(--color-white);
-      padding: var(--spacing-2xl) var(--spacing-lg);
-      max-width: 720px;
-    }
-
-    .hero-content .eyebrow {
-      margin-bottom: var(--spacing-md);
-    }
-
-    .hero-content h1 {
-      font-size: clamp(3rem, 7vw, 5.5rem);
-      font-weight: 400;
-      line-height: 1.1;
-      margin-bottom: var(--spacing-md);
-      color: var(--color-white);
-    }
-
-    .hero-content h1 em {
-      font-style: italic;
-      font-weight: 400;
-    }
-
-    .hero-sub {
-      font-size: 1.1rem;
-      font-weight: 300;
-      color: rgba(255,255,255,0.78);
-      margin-bottom: var(--spacing-lg);
-      letter-spacing: 0.02em;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: var(--spacing-sm);
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .hero-scroll-hint {
-      position: absolute;
-      bottom: var(--spacing-lg);
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      z-index: 1;
-    }
-
-    .scroll-line {
-      width: 1px;
-      height: 40px;
-      background: rgba(255,255,255,0.3);
-    }
-
     /* ── About Preview ──────────────────────────────────────── */
-    .about-preview-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--spacing-2xl);
-      align-items: center;
+    .about-preview-card {
+      max-width: 740px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: var(--spacing-xl);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
     }
 
-    .about-preview-photo .photo-placeholder {
-      aspect-ratio: 3/4;
-    }
-
-    .about-preview-text .eyebrow {
+    .about-preview-card .eyebrow {
       margin-bottom: var(--spacing-sm);
     }
 
-    .about-preview-text h2 {
+    .about-preview-card h2 {
       font-size: clamp(1.8rem, 3.5vw, 2.8rem);
       margin-bottom: var(--spacing-md);
+    }
+
+    .about-preview-img-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3/2;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .about-preview-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .about-preview-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+    }
+
+    .about-preview-img-label {
+      position: absolute;
+      bottom: var(--spacing-md);
+      left: var(--spacing-md);
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
     }
 
     .about-preview-body {
@@ -325,7 +223,139 @@
       margin-bottom: var(--spacing-sm);
     }
 
-    /* ── Portfolio Preview ──────────────────────────────────── */
+    /* ── Credentials Strip ──────────────────────────────────── */
+    .awards-strip-home {
+      background: var(--color-bg-dark);
+      padding: var(--spacing-lg) 0;
+    }
+
+    .awards-list-home {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .award-item-home {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      padding: var(--spacing-sm) var(--spacing-md);
+      text-align: center;
+    }
+
+    .award-year-home {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+    }
+
+    .award-name-home {
+      font-family: var(--font-serif);
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.82);
+      white-space: nowrap;
+    }
+
+    .award-divider-home {
+      width: 1px;
+      height: 28px;
+      background: rgba(255,255,255,0.12);
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .awards-list-home {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+      }
+      .award-divider-home {
+        width: 32px;
+        height: 1px;
+      }
+      .award-name-home {
+        white-space: normal;
+      }
+    }
+
+    /* ── Carousel ───────────────────────────────────────────── */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 5/4;
+      border-radius: 8px;
+    }
+
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.35);
+      color: #fff;
+      border: none;
+      width: 38px;
+      height: 38px;
+      font-size: 1.4rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--transition);
+      z-index: 2;
+    }
+
+    .carousel-btn:hover {
+      background: rgba(0,0,0,0.6);
+    }
+
+    .carousel-prev { left: var(--spacing-xs); }
+    .carousel-next { right: var(--spacing-xs); }
+
+    .carousel-dots {
+      position: absolute;
+      bottom: var(--spacing-sm);
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 2;
+    }
+
+    .carousel-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,0.45);
+      cursor: pointer;
+      padding: 0;
+      transition: background var(--transition);
+    }
+
+    .carousel-dot.active {
+      background: #fff;
+    }
+
+    /* ── Portfolio Categories ───────────────────────────────── */
     .section-header {
       text-align: center;
       margin-bottom: var(--spacing-xl);
@@ -342,71 +372,85 @@
       margin: 0 auto;
     }
 
-    .portfolio-grid-preview {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto auto;
-      gap: 1px;
-      background: var(--color-border);
-      margin-bottom: var(--spacing-xl);
+    .category-card {
+      max-width: 740px;
+      margin: 0 auto var(--spacing-2xl);
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: var(--spacing-xl);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
     }
 
-    .portfolio-thumb {
-      position: relative;
-      overflow: hidden;
-      background: var(--color-bg);
+    .category-card .eyebrow {
+      margin-bottom: var(--spacing-sm);
     }
 
-    .portfolio-thumb img {
-      aspect-ratio: 4/3;
-    }
-
-    .portfolio-thumb .photo-placeholder {
-      aspect-ratio: 4/3;
-    }
-
-    .portfolio-thumb--tall {
-      grid-row: span 2;
-    }
-
-    .portfolio-thumb--tall img {
-      aspect-ratio: unset;
-      height: 100%;
-      min-height: 300px;
-    }
-
-    .portfolio-thumb--tall .photo-placeholder {
-      aspect-ratio: unset;
-      height: 100%;
-      min-height: 300px;
-    }
-
-    .portfolio-thumb--wide {
-      grid-column: span 2;
-    }
-
-    .thumb-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: var(--spacing-sm);
-      background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
-      color: var(--color-white);
-      font-size: 0.75rem;
+    .category-card h3 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
       font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transform: translateY(100%);
-      transition: transform 0.3s ease;
+      margin-bottom: var(--spacing-md);
+      line-height: 1.2;
     }
 
-    .portfolio-thumb:hover .thumb-caption {
-      transform: translateY(0);
+    .category-card-img {
+      width: 100%;
+      aspect-ratio: 3/2;
+      object-fit: cover;
+      display: block;
+      border-radius: 8px;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .category-card .carousel {
+      margin-bottom: var(--spacing-md);
+    }
+
+    .category-card p {
+      color: var(--color-text-muted);
     }
 
     .section-footer {
       text-align: center;
+    }
+
+    /* ── Reel Section ────────────────────────────────────────── */
+    .reel-section {
+      background: var(--color-bg);
+    }
+
+    .reel-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-2xl);
+      align-items: center;
+    }
+
+    .reel-text .eyebrow {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .reel-text h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .reel-text p {
+      color: var(--color-text-muted);
+      max-width: 400px;
+    }
+
+    .reel-embed {
+      display: flex;
+      justify-content: center;
+    }
+
+    .reel-embed .fb-video,
+    .reel-embed iframe {
+      width: 100% !important;
+      max-width: 400px;
+      min-height: 500px;
     }
 
     /* ── Contact CTA ─────────────────────────────────────────── */
@@ -469,27 +513,21 @@
 
     /* ── Responsive ──────────────────────────────────────────── */
     @media (max-width: 768px) {
-      .about-preview-grid {
+      .about-preview-card {
+        padding: var(--spacing-lg);
+      }
+
+      .reel-inner {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
       }
 
-      .portfolio-grid-preview {
-        grid-template-columns: 1fr 1fr;
+      .reel-text p {
+        max-width: 100%;
       }
 
-      .portfolio-thumb--tall {
-        grid-row: span 1;
-      }
-
-      .portfolio-thumb--tall img,
-      .portfolio-thumb--tall .photo-placeholder {
-        aspect-ratio: 4/3;
-        height: auto;
-      }
-
-      .portfolio-thumb--wide {
-        grid-column: span 2;
+      .category-card {
+        padding: var(--spacing-lg);
       }
 
       .contact-cta-inner {
@@ -499,19 +537,49 @@
     }
 
     @media (max-width: 480px) {
-      .portfolio-grid-preview {
-        grid-template-columns: 1fr;
-      }
-
-      .portfolio-thumb--wide {
-        grid-column: span 1;
+      .category-card {
+        padding: var(--spacing-md);
       }
     }
   </style>
 
   <script>
-    // Copyright year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // Families carousel
+    (function () {
+      const carousel = document.getElementById('familiesCarousel');
+      const track = carousel.querySelector('.carousel-track');
+      const slides = carousel.querySelectorAll('.carousel-slide');
+      const dots = carousel.querySelectorAll('.carousel-dot');
+      const total = slides.length;
+      let current = 0;
+      let timer;
+
+      function goTo(index) {
+        current = (index + total) % total;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+      }
+
+      function next() { goTo(current + 1); }
+      function prev() { goTo(current - 1); }
+
+      function startAuto() {
+        timer = setInterval(next, 3500);
+      }
+
+      function stopAuto() {
+        clearInterval(timer);
+      }
+
+      carousel.querySelector('.carousel-next').addEventListener('click', () => { stopAuto(); next(); startAuto(); });
+      carousel.querySelector('.carousel-prev').addEventListener('click', () => { stopAuto(); prev(); startAuto(); });
+      dots.forEach((dot, i) => dot.addEventListener('click', () => { stopAuto(); goTo(i); startAuto(); }));
+      carousel.addEventListener('mouseenter', stopAuto);
+      carousel.addEventListener('mouseleave', startAuto);
+
+      startAuto();
+    })();
+
 
     // Mobile nav toggle
     const nav = document.getElementById('nav');
